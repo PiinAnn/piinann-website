@@ -27,8 +27,28 @@
       background: var(--bg);
     }
 
+    /* Header with profile */
+    .header {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .profile-img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--pink);
+      box-shadow: 0 0 20px var(--pink-glow);
+      flex-shrink: 0;
+    }
+
+    .header-text { flex: 1; min-width: 0; }
+
     h1 {
-      font-size: 2.6em;
+      font-size: 2.4em;
       margin: 0 0 4px;
       color: var(--text);
       letter-spacing: -0.02em;
@@ -38,7 +58,6 @@
       color: var(--pink);
       font-family: var(--mono);
       font-size: 0.95em;
-      font-style: normal;
       margin: 0 0 4px;
     }
 
@@ -51,7 +70,7 @@
 
     .location {
       color: var(--text-dim);
-      font-size: 0.95em;
+      font-size: 0.9em;
       margin: 4px 0 0;
     }
 
@@ -70,7 +89,6 @@
       background: rgba(255, 79, 180, 0.06);
     }
 
-    /* The Max inlet dot */
     h2::before {
       content: "";
       position: absolute;
@@ -109,7 +127,6 @@
       border-bottom-color: var(--pink);
     }
 
-    /* Nav row */
     .nav {
       margin: 30px 0 24px;
       padding: 14px 0;
@@ -122,9 +139,7 @@
       margin-right: 22px;
       color: var(--pink-soft);
     }
-    .nav a:hover {
-      color: var(--pink);
-    }
+    .nav a:hover { color: var(--pink); }
 
     .contact {
       font-family: var(--mono);
@@ -133,7 +148,6 @@
       line-height: 1.9;
     }
 
-    /* Artist statement */
     .statement {
       font-style: italic;
       color: var(--text);
@@ -145,7 +159,7 @@
 
     /* Work item */
     .work-item {
-      margin: 22px 0 28px;
+      margin: 28px 0 36px;
       padding-left: 14px;
       border-left: 1px solid rgba(255, 79, 180, 0.25);
     }
@@ -165,7 +179,7 @@
     }
 
     .work-desc {
-      margin: 6px 0 8px;
+      margin: 6px 0 10px;
       color: var(--text);
     }
 
@@ -175,8 +189,36 @@
       margin-right: 12px;
     }
 
+    /* Work image */
+    .work-img {
+      max-width: 100%;
+      width: 100%;
+      border-radius: 4px;
+      margin: 12px 0 10px;
+      border: 1px solid rgba(255, 79, 180, 0.2);
+      display: block;
+    }
+
+    /* YouTube embed */
+    .video-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      margin: 12px 0 10px;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 79, 180, 0.2);
+    }
+    .video-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+
     ul {
-      padding-left: 20px;
+      padding-left: 0;
       list-style: none;
     }
 
@@ -199,9 +241,7 @@
       font-weight: normal;
     }
 
-    em {
-      color: var(--text-dim);
-    }
+    em { color: var(--text-dim); }
 
     .footer-contact {
       margin-top: 60px;
@@ -211,14 +251,26 @@
       font-family: var(--mono);
       font-size: 0.88em;
     }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .header { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .profile-img { width: 110px; height: 110px; }
+      h1 { font-size: 2em; }
+    }
   </style>
 </head>
 <body>
 
-  <h1>Piin Ann 平安</h1>
-  <p class="subtitle">Interactive Audio Design | Music Producer</p>
-  <p class="academic-name">academic name: Yun-An Wang</p>
-  <p class="location">📍 Currently in Finland, from Taiwan</p>
+  <div class="header">
+    <img src="profile.jpg" alt="Piin Ann" class="profile-img">
+    <div class="header-text">
+      <h1>Piin Ann 平安</h1>
+      <p class="subtitle">Interactive Audio Design | Music Producer</p>
+      <p class="academic-name">academic name: Yun-An Wang</p>
+      <p class="location">📍 Currently in Finland, from Taiwan</p>
+    </div>
+  </div>
 
   <div class="nav">
     <a href="#about">about</a>
@@ -243,114 +295,137 @@
   <p>Applying the scientific rigor of Music & Science to Electronic Music Production and Interactive sound design.</p>
 
   <p><strong style="color: var(--pink-soft); font-family: var(--mono);">M.A. Student in Music and Science</strong>, University of Jyväskylä (JYU), Finland</p>
-  <p><strong style="color: var(--pink-soft); font-family: var(--mono);">Research Focus:</strong> Relationship between Just Intonation (JI) and Cognitive Load.</p>
-
-  <p><em>Currently composing full original score for an upcoming VR multiplayer experience with Moonshine Animation. (Details available upon request.)</em></p>
+  <p><strong style="color: var(--pink-soft); font-family: var(--mono);">Research Focus:</strong> Relationship between Just Intonation (JI), Auditory Roughness and Cognitive Load.</p>
 
   <!-- WORKS -->
   <h2 id="works">works~</h2>
 
+  <p><em>Currently composing full original score for an upcoming VR multiplayer experience with Moonshine Animation. (Details available upon request.)</em></p>
+
   <h3>Interactive / A-V Projects</h3>
 
   <div class="work-item">
+    <span class="work-title">BOKPAKL — A/V Project Director</span><span class="work-year">2023–2025</span>
+    <img src="bokpakl.jpg" alt="BOKPAKL" class="work-img">
+    <p class="work-desc">A cross-media immersive project blending VJ, electronic music, and world music. Solo concerts across Taiwan, plus invitations to National Lantern Festival 2024, Taitung Spirit Festival, TSG HAWKS Opening, New Taipei City Sonic Wandering Festival, and Hong Kong Blindcat.</p>
+    <a href="https://open.spotify.com/artist/4c2D6UdR0FhKB82SlOJhdn" target="_blank">spotify →</a>
+    <a href="https://youtu.be/kXRVL34zYGg" target="_blank">live →</a>
+    <a href="https://youtu.be/b8piwuuvnng" target="_blank">music video →</a>
+  </div>
+
+  <div class="work-item">
+    <span class="work-title">Taipei 101 AMBI SPACE ONE — X-box Interactive</span><span class="work-year">2025</span>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/aRrmEMGAE7A" title="Taipei 101 AMBI SPACE ONE" allowfullscreen></iframe>
+    </div>
+    <p class="work-desc">An exhibition blending nature and technology. Music and interactive sound designer, using Ableton and Max/MSP.</p>
+    <a href="https://tixfun.com/UTK0201_?PRODUCT_ID=Q01SZKKF" target="_blank">event →</a>
+  </div>
+
+  <div class="work-item">
+    <span class="work-title">ASUS ROG — Hand-tracking Interactive Sound</span><span class="work-year">2025</span>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/TE469koUF9I" title="ASUS ROG Hand-tracking" allowfullscreen></iframe>
+    </div>
+    <p class="work-desc">Marketing promotion experience for ROG. Music and interactive sound designer, using Ableton and Max/MSP.</p>
+  </div>
+
+  <div class="work-item">
     <span class="work-title">Mutual Care Eco System 🌳</span><span class="work-year">2026</span>
-    <p class="work-desc">LIVE at Ääniasema — Experimental Music Festival. An interactive system built from plants, mapping bio signals from Arduino to MaxMSP & Ableton. Leaves create MIDI notes like an instrument; soil moisture, distance, and trunk capacitive sensors modulate sounds.</p>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/Vv6mgM2JZ2I" title="Mutual Care Eco System" allowfullscreen></iframe>
+    </div>
+    <p class="work-desc">LIVE at Ääniasema — Experimental Music Festival. An interactive system built from plants, mapping bio signals from Arduino to Max/MSP & Ableton. Leaves create MIDI notes like an instrument; soil moisture, distance, and trunk capacitive sensors modulate sounds.</p>
+  </div>
+
+  <div class="work-item">
+    <span class="work-title">Running Tempo Modulation</span><span class="work-year">2025</span>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/zWKxRp4hFHw" title="Running Tempo Modulation" allowfullscreen></iframe>
+    </div>
+    <p class="work-desc">Personal project. Movement modulates music and tempo — faster pace activates high-arousal instruments like drum & bass; slower pace activates ambient sounds.</p>
   </div>
 
   <div class="work-item">
     <span class="work-title">GGJ 2026 — Game Music & Sound Design</span><span class="work-year">2026</span>
     <p class="work-desc">Global Game Jam in Tampere, Finland. Composed music for 4 groups within 48 hours.</p>
-    <a href="https://www.youtube.com/watch?v=8HZnkHqtqyA&list=PLr9AoEH3asMFRVlXP1MhZXJUu1XIyPTtm" target="_blank">watch →</a>
-  </div>
-
-  <div class="work-item">
-    <span class="work-title">Taipei 101 AMBI SPACE ONE — X-box Interactive</span><span class="work-year">2025</span>
-    <p class="work-desc">An exhibition blending nature and technology. Music and interactive sound designer, using Ableton and Max/MSP.</p>
-    <a href="https://tixfun.com/UTK0201_?PRODUCT_ID=Q01SZKKF" target="_blank">event →</a>
-    <a href="https://youtube.com/aRrmEMGAE7A" target="_blank">music demo →</a>
-  </div>
-
-  <div class="work-item">
-    <span class="work-title">ASUS ROG — Hand-tracking Interactive Sound</span><span class="work-year">2025</span>
-    <p class="work-desc">Marketing promotion experience for ROG. Music and interactive sound designer, using Ableton and Max/MSP.</p>
-    <a href="https://www.youtube.com/watch?v=TE469koUF9I" target="_blank">watch →</a>
-  </div>
-
-  <div class="work-item">
-    <span class="work-title">Running Tempo Modulation</span><span class="work-year">2025</span>
-    <p class="work-desc">Personal project. Movement modulates music and tempo — faster pace activates high-arousal instruments like drum & bass; slower pace activates ambient sounds.</p>
-    <a href="https://youtube.com/shorts/zWKxRp4hFHw" target="_blank">watch →</a>
-  </div>
-
-  <div class="work-item">
-    <span class="work-title">BOKPAKL — A/V Project Director</span><span class="work-year">2023–2025</span>
-    <p class="work-desc">A cross-media immersive project blending VJ, electronic music, and world music. Solo concerts across Taiwan, plus invitations to National Lantern Festival 2024, Taitung Spirit Festival, TSG HAWKS Opening, New Taipei City Sonic Wandering Festival, and Hong Kong Blindcat.</p>
-    <a href="https://open.spotify.com/artist/4c2D6UdR0FhKB82SlOJhdn" target="_blank">spotify →</a>
-    <a href="https://youtu.be/kXRVL34zYGg" target="_blank">live 1 →</a>
-    <a href="https://youtu.be/b8piwuuvnng" target="_blank">live 2 →</a>
+    <a href="https://www.youtube.com/watch?v=8HZnkHqtqyA&list=PLr9AoEH3asMFRVlXP1MhZXJUu1XIyPTtm" target="_blank">playlist →</a>
   </div>
 
   <h3>Music Production</h3>
 
   <div class="work-item">
     <span class="work-title">This Is How Waterfall Feels Like</span><span class="work-year">2025</span>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/zY8Zv7xyPPs" title="This Is How Waterfall Feels Like" allowfullscreen></iframe>
+    </div>
     <p class="work-desc">The sound I heard while I deeply felt the water element — shapeless, shifting form to permeate every space. This is my unspoken love, a talisman for my soul.</p>
-    <a href="https://youtu.be/zY8Zv7xyPPs" target="_blank">listen →</a>
   </div>
 
   <div class="work-item">
     <span class="work-title">Liquid Fairy</span><span class="work-year">2024</span>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/DsfMdy93Tv0" title="Liquid Fairy" allowfullscreen></iframe>
+    </div>
     <p class="work-desc">Magical ambient sounds.</p>
-    <a href="https://youtu.be/DsfMdy93Tv0" target="_blank">listen →</a>
   </div>
 
   <div class="work-item">
     <span class="work-title">Life On Fire</span><span class="work-year">2023</span>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/mAuWD19hWCE" title="Life On Fire" allowfullscreen></iframe>
+    </div>
     <p class="work-desc">Inspiration came while traveling the whole of Taiwan by foot. We burn, fall, settle, and reset the new cycle.</p>
-    <a href="https://youtu.be/mAuWD19hWCE" target="_blank">listen →</a>
   </div>
 
   <div class="work-item">
     <span class="work-title">Tat Savithur Varenyam</span><span class="work-year">2023</span>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/rfGIIY6u-rE" title="Tat Savithur Varenyam" allowfullscreen></iframe>
+    </div>
     <p class="work-desc">Original composition inspired by Vedic chants. Work for a Wellness Workshop.</p>
-    <a href="https://youtu.be/rfGIIY6u-rE" target="_blank">listen →</a>
   </div>
 
   <div class="work-item">
     <span class="work-title">Oursong Remix</span><span class="work-year">2023</span>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/jsw6M5Y91Fs" title="Oursong Remix" allowfullscreen></iframe>
+    </div>
     <p class="work-desc">3rd place in the Oursong Remix Competition; also 1st in creator peer voting.</p>
-    <a href="https://youtu.be/jsw6M5Y91Fs" target="_blank">listen →</a>
   </div>
 
   <h3>Live Performance</h3>
 
   <div class="work-item">
-    <span class="work-title">TSG HAWKS — Baseball Stadium Opening</span><span class="work-year">2024</span>
-    <p class="work-desc"></p>
+    <span class="work-title">TSG HAWKS — Baseball Stadium Opening</span><span class="work-year">2025</span>
+    <img src="baseball.jpg" alt="TSG HAWKS Opening" class="work-img">
+    <p class="work-desc">Featured opening guest performance for the 2025 Taiwan Professional Baseball League season opener.</p>
     <a href="https://www.youtube.com/watch?v=F-a8Jh6Y9VM" target="_blank">watch →</a>
   </div>
 
   <div class="work-item">
     <span class="work-title">Taiwan Lantern Festival</span><span class="work-year">2024</span>
+    <img src="lantern.jpg" alt="Taiwan Lantern Festival" class="work-img">
     <p class="work-desc">Performed as featured artist at the National Lantern Festival in Tainan.</p>
   </div>
 
   <div class="work-item">
-    <span class="work-title">Taitung Spirit Festival</span>
-    <p class="work-desc">Outdoor performance at the natural-awakening festival in Taitung.</p>
+    <span class="work-title">New Taipei City Sonic Wandering Festival</span><span class="work-year">2024</span>
+    <p class="work-desc">Double performance: opening guest for the entire event, plus a one-hour main stage set.</p>
+    <a href="https://youtu.be/O5sM35_VJno" target="_blank">watch →</a>
   </div>
 
   <div class="work-item">
-    <span class="work-title">New Taipei City Sonic Wandering Festival</span>
-    <p class="work-desc"></p>
-    <a href="https://youtu.be/O5sM35_VJno" target="_blank">watch →</a>
+    <span class="work-title">Taitung Spirit Festival</span><span class="work-year">2024</span>
+    <img src="taitung.jpg" alt="Taitung Spirit Festival" class="work-img">
+    <p class="work-desc">Outdoor performance at the natural-awakening festival in Taitung.</p>
   </div>
 
   <p><em>Other past performances include: Hong Kong Blindcat, Witch House (女巫店), and more.</em></p>
 
   <!-- WRITINGS -->
   <h2 id="writings">writings~</h2>
-  <p><em>Academic blog coming soon — exploring topics on Just Intonation, cognitive load, and the intersection of sound and consciousness.</em></p>
+  <p><em>Academic blog coming soon — exploring topics on Just Intonation, auditory roughness, cognitive load, and the intersection of sound and consciousness.</em></p>
 
   <!-- NOTES -->
   <h2 id="notes">notes~</h2>
