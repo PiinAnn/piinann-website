@@ -14,19 +14,30 @@
       color: #333;
     }
     h1 { font-size: 2.5em; margin-bottom: 0; }
-    h2 { margin-top: 40px; color: #d63384; }
-    .subtitle { color: #d63384; font-style: italic; }
-    .nav { margin: 30px 0; }
+    h2 { margin-top: 50px; color: #d63384; border-bottom: 1px solid #d63384; padding-bottom: 8px; }
+    h3 { margin-top: 30px; color: #d63384; }
+    .subtitle { color: #d63384; font-style: italic; font-size: 1.1em; }
+    .academic-name { color: #888; font-size: 0.95em; }
+    .location { color: #666; }
+    .nav { margin: 30px 0; padding: 15px 0; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; }
     .nav a { margin-right: 20px; }
-    a { color: #d63384; }
+    a { color: #d63384; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .statement { font-style: italic; color: #555; border-left: 3px solid #d63384; padding-left: 20px; margin: 20px 0; }
+    .work-item { margin: 25px 0; }
+    .work-title { font-weight: bold; color: #d63384; }
+    .work-year { color: #888; font-size: 0.9em; }
+    .work-desc { margin-top: 5px; }
+    ul { padding-left: 20px; }
+    li { margin: 8px 0; }
   </style>
 </head>
 <body>
 
   <h1>Piin Ann 平安</h1>
   <p class="subtitle">Interactive Audio Design | Music Producer</p>
-  <p>Academic name: Yun-An Wang</p>
-  <p>📍 Currently in Finland, from Taiwan</p>
+  <p class="academic-name">Academic name: Yun-An Wang</p>
+  <p class="location">📍 Currently in Finland, from Taiwan</p>
 
   <div class="nav">
     <a href="#about">About</a>
@@ -41,27 +52,36 @@
     📷 <a href="https://instagram.com/piin_ann">@piin_ann</a>
   </p>
 
+  <!-- ABOUT -->
   <h2 id="about">About</h2>
+  
+  <p class="statement">
+    "My only intention is to heal people. I found my passion in music and frequencies. I'm just so fascinated of exploring music as a non-verbal communication tool, and want to explore the full potential of sounds and myself. It is sacred for me. Whether through my art work or research work."
+  </p>
+
   <p>Applying the scientific rigor of Music & Science to Electronic Music Production and Interactive sound design.</p>
-  <p>M.A. Student in Music and Science, University of Jyväskylä (JYU), Finland</p>
-  <p>Research Focus: Relationship between Just Intonation (JI) and Cognitive Load.</p>
+  
+  <p><strong>M.A. Student in Music and Science</strong>, University of Jyväskylä (JYU), Finland</p>
+  <p><strong>Research Focus:</strong> Relationship between Just Intonation (JI) and Cognitive Load.</p>
+  
+  <p><em>Currently composing full original score for an upcoming VR multiplayer experience with Moonshine Animation. (Details available upon request.)</em></p>
 
+  <!-- WORKS -->
   <h2 id="works">Works</h2>
-  <p><em>Coming soon — YouTube embeds will be added here.</em></p>
 
-  <h2 id="writings">Writings</h2>
-  <p><em>Academic blog coming soon.</em></p>
+  <h3>Interactive / A-V Projects</h3>
 
-  <h2 id="notes">Notes</h2>
-  <p><em>Personal thoughts coming soon.</em></p>
+  <div class="work-item">
+    <span class="work-title">Mutual Care Eco System 🌳</span> <span class="work-year">(2026)</span>
+    <p class="work-desc">LIVE at Ääniasema — Experimental Music Festival. An interactive system built from plants, mapping bio signals from Arduino to MaxMSP & Ableton. Leaves create MIDI notes like an instrument; soil moisture, distance, and trunk capacitive sensors modulate sounds.</p>
+  </div>
 
-  <h2 id="services">Services</h2>
-  <ul>
-    <li><strong>Interactive Sound Design</strong> — Max/MSP, Audio-Visual Synchronization, Custom Controller Mapping</li>
-    <li><strong>Digital Music Production</strong> — Ableton Live, Electronic Music, Digital Arrangement</li>
-    <li><strong>Game Audio Design</strong> — Wwise, game theme song, sound fx design</li>
-    <li><strong>Performance</strong> — Studio Session, Live Feature, Live Electronic Performance</li>
-  </ul>
+  <div class="work-item">
+    <span class="work-title">GGJ 2026 — Game Music & Sound Design</span> <span class="work-year">(2026)</span>
+    <p class="work-desc">Global Game Jam in Tampere, Finland. Composed music for 4 groups within 48 hours.</p>
+    <a href="https://www.youtube.com/watch?v=8HZnkHqtqyA&list=PLr9AoEH3asMFRVlXP1MhZXJUu1XIyPTtm" target="_blank">Watch →</a>
+  </div>
 
-</body>
-</html>
+  <div class="work-item">
+    <span class="work-title">Taipei 101 AMBI SPACE ONE — X-box Interactive</span> <span class="work-year">(2025)</span>
+    <p class="work-desc">An exhibition blending nature and tech
